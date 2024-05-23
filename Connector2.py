@@ -1,1 +1,0 @@
-### Connector para la raspberry pi 2 
