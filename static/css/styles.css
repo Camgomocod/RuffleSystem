@@ -1,1 +1,217 @@
-/* Aquí irían tus estilos CSS */
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(120deg, #d2df64, #2fac73, #dafff7);
+  background-size: 300% 300%;
+  animation: color 12s ease-in-out infinite;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0%;
+}
+
+.logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 10px;
+  height: 50px;
+}
+
+.label1 {
+  color: black;
+  height: 100px;
+}
+
+.border {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: relative;
+  background: #154854; /* Fondo naranja para las tarjetas */
+  border-radius: 15px; /* Bordes redondeados */
+  padding: 20px; /* Espacio alrededor de las tarjetas */
+  border: 5px solid black;
+  background: linear-gradient(120deg, #2fac73, #154854);
+  box-shadow: 15px 14px 20px black;
+}
+
+.top {
+  background: linear-gradient(120deg, #2fac73, #154854);
+  width: 450px;
+  height: 130px;
+  border-radius: 50% 50% 0 0;
+  border-style: groove;
+  border-color: black;
+  border: 5px groove black;
+  box-shadow: 15px 14px 20px black;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.circle {
+  height: 40px;
+  width: 50px;
+  margin: 40px 1rem;
+  background-color: #101010;
+  border-radius: 100%;
+  box-shadow: 16px 14px 20px #0000008c;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #dafff7;
+  border-style: dashed;
+}
+
+.circle::before {
+  content: "";
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  background-image: conic-gradient(#fe7955 20deg, transparent 120deg);
+  animation: rotar 1s linear infinite;
+}
+.circle::after {
+  content: "";
+  position: absolute;
+  height: 60px;
+  width: 50px;
+  border-radius: 100%;
+  box-shadow: inset 16px 14px 20px #0000008c;
+}
+
+.doors {
+  display: flex;
+  background: linear-gradient(120deg, #d2df64, #2fac73);
+  border-radius: 15px; /* Bordes redondeados */
+  width: 600px;
+  padding: 20px; /* Espacio alrededor de las tarjetas */
+  border-style: solid;
+  border-color: black;
+  box-shadow: 15px 14px 20px black;
+}
+
+.door {
+  width: 200px;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 5px;
+  margin: 5px;
+  box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
+  border-style: groove;
+  border-color: black;
+}
+
+.boxMessage {
+  border-radius: 3%;
+  width: 300px;
+  height: 40px;
+  background-color: #dafff7;
+  background: linear-gradient(120deg, #dafff7, #d2df64);
+  border: 4px solid #101010;
+  padding: 20px;
+  margin: 0.5rem 0.5rem;
+  text-align: center;
+}
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  width: 200px;
+  height: 220px;
+  background-color: #dafff7;
+}
+
+.buttons {
+  flex-direction: row;
+  margin: 1rem 0 2rem 0;
+}
+
+button {
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin: 0 0.2rem;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  transition: background-color 0.3s ease; /* Agrega transiciones a los botones */
+}
+
+button:hover {
+  background-color: #fe7955; /* Cambia el color de fondo al pasar el mouse */
+}
+
+.lever {
+  width: 20px;
+  height: 100px;
+  background: #888;
+  right: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 10px;
+  box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
+  border-style: solid;
+}
+
+.ball {
+  width: 40px;
+  height: 40px;
+  background: #888;
+  position: absolute;
+  border-style: solid;
+  top: -20px;
+  left: -10px;
+  border-radius: 50%;
+  box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
+  background-color: #fe7955;
+}
+
+@keyframes leverAnimation {
+  0% {
+    transform: translateY(-50%);
+  }
+  50% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+@keyframes color {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+@keyframes rotar {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.lever.animate {
+  animation: leverAnimation 0.5s;
+}

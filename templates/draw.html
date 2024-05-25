@@ -1,9 +1,47 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- Aquí irían tus estilos CSS y scripts JavaScript -->
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css" />
   </head>
   <body>
-    <!-- Aquí iría la interfaz del sorteo -->
+    <div id="app">
+      <img class="logo" src="/images/logo.png" alt="logo de la empresa" />
+      <div class="top">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </div>
+      <div class="border">
+        <div class="doors">
+          <div class="door">
+            <div class="boxes">
+              <!-- <div class="box">?</div> -->
+            </div>
+          </div>
+
+          <div class="door">
+            <div class="boxes">
+              <!-- <div class="box">?</div> -->
+            </div>
+          </div>
+
+          <div class="door">
+            <div class="boxes">
+              <!-- <div class="box">?</div> -->
+            </div>
+          </div>
+
+          <div class="lever">
+            <div class="ball"></div>
+          </div>
+        </div>
+        <div class="boxMessage" id="messageBox"></div>
+      </div>
+      <div class="buttons">
+        <button id="spinner">Play</button>
+        <button id="reseter">Reset</button>
+      </div>
+    </div>
+    <script src="/static/jss/ruffle.js"></script>
   </body>
 </html>
