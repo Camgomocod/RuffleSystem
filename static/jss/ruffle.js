@@ -78,30 +78,45 @@
       door.replaceChild(boxesClone, boxes);
     }
   }
-
+  /* Sección del codigo que permite animar el apartado del sorteo y cambiar el color de las luces,
+  también el poder mostrar el mensaje correspondiente*/
   async function spin() {
     count++;
     init(false, 1, 2);
     const messageBox = document.getElementById("messageBox");
+    const light1 = document.getElementById("light1");
+    const light2 = document.getElementById("light2");
+
+    messageBox.innerText = "🔥🔥🔥🔥🔥";
 
     for (const door of doors) {
-      messageBox.innerText = "Suerte";
       const boxes = door.querySelector(".boxes");
       const duration = parseInt(boxes.style.transitionDuration);
       boxes.style.transform = "translateY(0)";
+      light1.style.backgroundColor = "#dafff7";
+      light2.style.backgroundColor = "#dafff7";
+
+      light1.classList.remove("desactive");
+      light2.classList.remove("desactive");
+
       if (count === 5) {
         boxes.querySelector(".box").textContent = "😊";
+        setTimeout(() => {
+          light1.classList.add("active");
+          light2.classList.add("active");
+        }, 2400);
         showMessage();
       } else {
-        messageBox.innerText = "Suerte la proxima!";
-        messageBox.innerText = "Suerte la proxima!";
+        light1.classList.remove("active");
+        light2.classList.remove("active");
+        setTimeout(() => {
+          light1.classList.add("desactive");
+          light2.classList.add("desactive");
+          messageBox.textContent = "Suerte la proxima 😞";
+        }, 2400);
       }
 
       await new Promise((resolve) => setTimeout(resolve, duration * 100));
-    }
-
-    if (count === 5) {
-      count = 0;
     }
   }
 
@@ -114,24 +129,12 @@
     return arr;
   }
 
-  document.querySelector("#spinner").addEventListener("click", function () {
-    const lever = document.querySelector(".lever");
-    lever.classList.add("animate");
-
-    lever.addEventListener(
-      "animationend",
-      function () {
-        lever.classList.remove("animate");
-      },
-      { once: true }
-    );
-  });
-
   function showMessage() {
-    const messageBox = document.getElementById("messageBox");
-    const message = "Ganador!";
-    messageBox.innerText = message;
-    setTimeout(2);
+    setTimeout(() => {
+      const messageBox = document.getElementById("messageBox");
+      const message = "Ganador! 😄";
+      messageBox.innerText = message;
+    }, 2500);
   }
 
   init();
