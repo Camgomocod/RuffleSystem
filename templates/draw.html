@@ -1,24 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="/static/css/styles.css" />
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="/static/css/stylesDraw.css" />
   </head>
   <body>
+    <div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+    </div>
     <div id="app">
       <img class="logo" src="/images/logo.png" alt="logo de la empresa" />
+      <!-- Sección de los led superiores de la slot machine -->
       <div class="top">
         <div class="circle"></div>
         <div class="circle"></div>
         <div class="circle"></div>
       </div>
+      <!-- Contenedor de las animaciones de las luces inferiores y de la caja de mensaje  -->
       <div class="border">
+        <!-- Contenedor de la animación de la determinación del ganador -->
         <div class="doors">
           <div class="door">
             <div class="boxes">
               <div class="box">?</div>
             </div>
           </div>
-
+          <!-- Apartado que contiene los que determinan el ganador  -->
           <div class="door">
             <div class="boxes">
               <div class="box">?</div>
@@ -30,17 +39,19 @@
               <div class="box">?</div>
             </div>
           </div>
-
+          <!-- Palanca animada -->
           <div class="lever">
             <div class="ball"></div>
           </div>
         </div>
+        <!-- Box message que dice si se gano o no junto a las luces que se ubican a los lados -->
         <div class="containerMessage">
           <div class="light" id="light1"></div>
           <div class="boxMessage" id="messageBox"></div>
           <div class="light" id="light2"></div>
         </div>
       </div>
+      <!-- Este apartado se elimina cuando se conecte el botón -->
       <div class="buttons">
         <button id="spinner">Play</button>
         <button id="reseter">Reset</button>

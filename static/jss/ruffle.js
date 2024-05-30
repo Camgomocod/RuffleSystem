@@ -20,7 +20,7 @@
 
   document.querySelector("#spinner").addEventListener("click", spin);
   document.querySelector("#reseter").addEventListener("click", init);
-
+  /* Función inicial que hace el spin de las tres boxes que determinan el ganador */
   function init(firstInit = true, groups = 1, duration = 1) {
     for (const door of doors) {
       if (firstInit) {
